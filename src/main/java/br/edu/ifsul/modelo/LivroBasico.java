@@ -7,6 +7,8 @@ import java.util.Objects;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -33,6 +35,7 @@ public class LivroBasico implements Serializable{
     @NotBlank(message = "O ISBN deve ser informado")
     @Length(max = 13, message = "O ISBN não pode ter mais que {max} caracteres")
     @Column(name = "isbn", length = 13, nullable = false)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private String isbn;
     
     @NotBlank(message = "O titulo não pode ser em branco")

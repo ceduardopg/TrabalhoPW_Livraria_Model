@@ -48,6 +48,15 @@ public class Livraria implements Serializable{
     public Livraria(){
         
     }
+    
+    public void adicionarCatalogo(Catalogo obj){
+        obj.setLivraria(this);
+        this.getCatalogos().add(obj);
+    }
+    
+    public void removerCatalogo(int index){
+        this.catalogos.remove(index);
+    }
 
     public Integer getId() {
         return id;
